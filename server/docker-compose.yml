@@ -4,7 +4,9 @@ services:
     build: .
     ports:
       - "9000:9000"
-      - "0:0"
+      - "3000:3000"
+      - "3001:3001"
+      - "8000:8000"
     volumes:
       - .:/app       # Mount the current directory inside the container
       - /app/node_modules # Ignore node_modules to prevent overwriting

@@ -42,15 +42,14 @@ function App() {
   }, [selectedFileContent]);
 
   const getFileTree = async () => {
-    const response = await fetch("http://localhost:9000/files");
+    const response = await fetch("https://docker-x4tj.onrender.com/files");
     const result = await response.json();
     setFileTree(result.tree);
   };
-
   const getFileContents = useCallback(async () => {
     if (!selectedFile) return;
     const response = await fetch(
-      `http://localhost:9000/files/content?path=${selectedFile}`
+      `https://docker-x4tj.onrender.com/files/content?path=${selectedFile}`
     );
     const result = await response.json();
     setSelectedFileContent(result.content);
